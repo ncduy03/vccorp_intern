@@ -13,7 +13,6 @@ my_list = [1, 2, 3, 4, 5]  # Mutable list
 my_tuple = (1, 2, 3)       # Immutable tuple
 my_set = {1, 2, 3, 4, 5}   # Set with unique values
 my_dict = {"name": "Alice", "age": 25}  # Dictionary (key-value pairs)
-
 ```
 
 Functions
@@ -21,7 +20,6 @@ Functions
 def greet(name):
     return f"Hello, {name}!"
 print(greet("Alice"))
-
 ```
 
 OOP
