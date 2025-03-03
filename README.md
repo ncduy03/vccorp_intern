@@ -103,16 +103,26 @@ public class Person {
 
 
 # OLTP and OLAP
-| Feature         | **OLTP (Online Transaction Processing)** | **OLAP (Online Analytical Processing)** |
-|---------------|----------------------------------------|----------------------------------------|
-| **Purpose**   | Real-time transaction processing     | Data analysis, reporting, decision-making |
-| **Data Type** | Current, operational data            | Historical, aggregated data |
-| **Query Type** | Simple queries (INSERT, UPDATE, DELETE) | Complex queries (JOINs, Aggregations) |
-| **Performance** | Low latency (fast transactions) | High throughput (optimized for large queries) |
-| **Data Storage** | Normalized (to reduce redundancy) | Denormalized (for faster queries) |
-| **Concurrency** | Supports thousands of users | Supports fewer users |
-| **Example Use Cases** | Banking, retail, e-commerce | Business intelligence, reporting, trend analysis |
-| **Technology** | MySQL, PostgreSQL, SQL Server | Snowflake, Redshift, BigQuery |
-
+| Category             | OLAP (Online Analytical Processing)                        | OLTP (Online Transaction Processing)                      |
+|----------------------|----------------------------------------------------------|----------------------------------------------------------|
+| **Definition**       | It is well-known as an online database query management system. | It is well-known as an online database modifying system. |
+| **Data source**      | Consists of historical data from various Databases.      | Consists of only operational current data.               |
+| **Method used**      | It makes use of a data warehouse.                        | It makes use of a standard database management system (DBMS). |
+| **Application**      | It is subject-oriented. Used for Data Mining, Analytics, Decision making, etc. | It is application-oriented. Used for business tasks.     |
+| **Normalized**       | In an OLAP database, tables are not normalized.          | In an OLTP database, tables are normalized (3NF).       |
+| **Usage of data**    | The data is used in planning, problem-solving, and decision-making. | The data is used to perform day-to-day fundamental operations. |
+| **Task**            | It provides a multi-dimensional view of different business tasks. | It reveals a snapshot of present business tasks.        |
+| **Purpose**         | It serves the purpose to extract information for analysis and decision-making. | It serves the purpose to Insert, Update, and Delete information from the database. |
+| **Volume of data**   | A large amount of data is stored typically in TB, PB.    | The size of the data is relatively small as the historical data is archived in MB, and GB. |
+| **Queries**         | Relatively slow as the amount of data involved is large. Queries may take hours. | Very Fast as the queries operate on 5% of the data. |
+| **Update**          | The OLAP database is not often updated. As a result, data integrity is unaffected. | The data integrity constraint must be maintained in an OLTP database. |
+| **Backup and Recovery** | It only needs backup from time to time as compared to OLTP. | The backup and recovery process is maintained rigorously. |
+| **Processing time**  | The processing of complex queries can take a lengthy time. | It is comparatively fast in processing because of simple and straightforward queries. |
+| **Types of users**   | This data is generally managed by CEO, MD, and GM.       | This data is managed by clerks and managers. |
+| **Operations**      | Only read and rarely write operations.                     | Both read and write operations.                          |
+| **Updates**         | With lengthy, scheduled batch operations, data is refreshed on a regular basis. | The user initiates data updates, which are brief and quick. |
+| **Nature of audience** | The process is focused on the customer.                | The process is focused on the market.                   |
+| **Database Design**  | Design with a focus on the subject.                      | Design that is focused on the application.              |
+| **Productivity**     | Improves the efficiency of business analysts.            | Enhances the user’s productivity.                       |
 
 
