@@ -102,3 +102,17 @@ public class Person {
 # **4. Linux**
 
 
+# OLTP and OLAP
+| Feature         | **OLTP (Online Transaction Processing)** | **OLAP (Online Analytical Processing)** |
+|---------------|----------------------------------------|----------------------------------------|
+| **Purpose**   | Real-time transaction processing     | Data analysis, reporting, decision-making |
+| **Data Type** | Current, operational data            | Historical, aggregated data |
+| **Query Type** | Simple queries (INSERT, UPDATE, DELETE) | Complex queries (JOINs, Aggregations) |
+| **Performance** | Low latency (fast transactions) | High throughput (optimized for large queries) |
+| **Data Storage** | Normalized (to reduce redundancy) | Denormalized (for faster queries) |
+| **Concurrency** | Supports thousands of users | Supports fewer users |
+| **Example Use Cases** | Banking, retail, e-commerce | Business intelligence, reporting, trend analysis |
+| **Technology** | MySQL, PostgreSQL, SQL Server | Snowflake, Redshift, BigQuery |
+
+
+
