@@ -1,4 +1,5 @@
-# **1. Python**
+# **1. Học các kỹ năng nền tảng**
+## 1.1. Python
 Data Types
 ```
 x = 10       # int
@@ -36,7 +37,7 @@ p = Person("Bob", 30)
 print(p.introduce())
 ```
 
-# **2. Java**
+## 1.2. Java
 Data Structures
 ```
 // Array (fixed-size collection of elements)
@@ -97,32 +98,40 @@ public class Person {
     }
 }
 ```
-# **3. SQL**
+## 1.3. SQL
 
-# **4. Linux**
+## 1.4. Linux
+# **2. Phân biệt OLTP vs OLAP, hiểu rõ ETL/ELT**
+
+| Tiêu chí              | OLTP (Xử lý giao dịch)          | OLAP (Phân tích dữ liệu)       |
+|----------------------|--------------------------------|--------------------------------|
+| **Mục đích**         | Xử lý giao dịch nhỏ, nhanh      | Phân tích dữ liệu lớn, báo cáo |
+| **Dữ liệu**          | Dữ liệu giao dịch thời gian thực | Dữ liệu tổng hợp, lịch sử     |
+| **Tốc độ xử lý**     | Rất nhanh (Milliseconds)       | Chậm hơn (Seconds - Minutes)  |
+| **Tải xử lý**        | Nhiều giao dịch đồng thời      | Ít người dùng, truy vấn nặng  |
+| **Cơ sở dữ liệu**    | Quan hệ (RDBMS: MySQL, PostgreSQL) | Data Warehouse (BigQuery, Redshift, Snowflake) |
+| **Truy vấn phổ biến** | CRUD (Create, Read, Update, Delete) | Aggregation (SUM, AVG, COUNT, GROUP BY) |
+| **Thiết kế dữ liệu**  | Lưu theo hàng (Row-based Storage) | Lưu theo cột (Column-based Storage) |
+| **Tính nhất quán**   | Rất quan trọng (ACID)         | Ít quan trọng hơn, chỉ cần tính toàn vẹn dữ liệu |
+| **Ứng dụng thực tế** | Ngân hàng, thương mại điện tử, POS | Báo cáo doanh thu, phân tích hành vi khách hàng |
 
 
-# OLTP and OLAP
-| Category             | OLAP (Online Analytical Processing)                        | OLTP (Online Transaction Processing)                      |
-|----------------------|----------------------------------------------------------|----------------------------------------------------------|
-| **Definition**       | It is well-known as an online database query management system. | It is well-known as an online database modifying system. |
-| **Data source**      | Consists of historical data from various Databases.      | Consists of only operational current data.               |
-| **Method used**      | It makes use of a data warehouse.                        | It makes use of a standard database management system (DBMS). |
-| **Application**      | It is subject-oriented. Used for Data Mining, Analytics, Decision making, etc. | It is application-oriented. Used for business tasks.     |
-| **Normalized**       | In an OLAP database, tables are not normalized.          | In an OLTP database, tables are normalized (3NF).       |
-| **Usage of data**    | The data is used in planning, problem-solving, and decision-making. | The data is used to perform day-to-day fundamental operations. |
-| **Task**            | It provides a multi-dimensional view of different business tasks. | It reveals a snapshot of present business tasks.        |
-| **Purpose**         | It serves the purpose to extract information for analysis and decision-making. | It serves the purpose to Insert, Update, and Delete information from the database. |
-| **Volume of data**   | A large amount of data is stored typically in TB, PB.    | The size of the data is relatively small as the historical data is archived in MB, and GB. |
-| **Queries**         | Relatively slow as the amount of data involved is large. Queries may take hours. | Very Fast as the queries operate on 5% of the data. |
-| **Update**          | The OLAP database is not often updated. As a result, data integrity is unaffected. | The data integrity constraint must be maintained in an OLTP database. |
-| **Backup and Recovery** | It only needs backup from time to time as compared to OLTP. | The backup and recovery process is maintained rigorously. |
-| **Processing time**  | The processing of complex queries can take a lengthy time. | It is comparatively fast in processing because of simple and straightforward queries. |
-| **Types of users**   | This data is generally managed by CEO, MD, and GM.       | This data is managed by clerks and managers. |
-| **Operations**      | Only read and rarely write operations.                     | Both read and write operations.                          |
-| **Updates**         | With lengthy, scheduled batch operations, data is refreshed on a regular basis. | The user initiates data updates, which are brief and quick. |
-| **Nature of audience** | The process is focused on the customer.                | The process is focused on the market.                   |
-| **Database Design**  | Design with a focus on the subject.                      | Design that is focused on the application.              |
-| **Productivity**     | Improves the efficiency of business analysts.            | Enhances the user’s productivity.                       |
+# 3. Tìm hiểu các khái niệm CAP, BASE, ACID
+## 3.1. CAP theorem
+- **Consistency (Tính nhất quán)**: Mọi node trong hệ thống phải có cùng một dữ liệu tại cùng một thời điểm.
+- **Availability (Tính sẵn sàng)**: Hệ thống luôn phản hồi yêu cầu, ngay cả khi một số node bị lỗi.
+- **Partition Tolerance (Chịu lỗi phân vùng)**: Hệ thống vẫn hoạt động ngay cả khi có lỗi mạng làm mất kết nối giữa các node.
+
+## 3.2. ACID vs BASE
+### ACID (SQL)
+- **Atomicity (Tính nguyên tử)**: Giao dịch phải thực hiện toàn bộ hoặc không có gì xảy ra.
+- **Consistency (Tính nhất quán)**: Dữ liệu luôn hợp lệ trước và sau khi giao dịch hoàn tất.
+- **Isolation (Tính cô lập)**: Giao dịch không bị ảnh hưởng bởi các giao dịch khác đang chạy đồng thời.
+- **Durability (Tính bền vững)**: Dữ liệu vẫn tồn tại ngay cả khi có sự cố hệ thống.
+
+### BASE (NoSQL)
+- **Basically Available (Tính sẵn sàng cơ bản)**: Hệ thống luôn phản hồi, ngay cả khi có lỗi hoặc dữ liệu chưa được cập nhật đầy đủ.
+- **Soft-state (Trạng thái mềm dẻo, không nhất quán ngay lập tức)**: Dữ liệu có thể thay đổi mà không cần sự can thiệp ngay lập tức.
+- **Eventually Consistent (Nhất quán sau một khoảng thời gian nhất định)**: Dữ liệu không cần chính xác ngay lập tức, nhưng sẽ đồng bộ theo thời gian.
 
 
