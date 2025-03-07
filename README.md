@@ -151,6 +151,44 @@ public class Person {
     - **Shuffle & Sort Phase**: Gom nhóm và sắp xếp dữ liệu trước khi đưa vào Reduce.  
     - **Reduce Phase**: Tổng hợp và xử lý dữ liệu cuối cùng để tạo ra kết quả.  
 
-## 4.2. Spark
+## 4.2. Apache Spark
+- **Spark Core**: Thành phần cốt lõi của Spark, cung cấp các chức năng xử lý dữ liệu phân tán  
+    - **RDD (Resilient Distributed Dataset)**: Cấu trúc dữ liệu chính giúp lưu trữ và xử lý dữ liệu phân tán.  
+    - **Task Scheduling**: Lập lịch và phân phối công việc trên cluster.  
+    - **Memory Management**: Quản lý bộ nhớ và tối ưu hóa thực thi.  
 
+- **Spark SQL**: Xử lý dữ liệu có cấu trúc bằng SQL và DataFrame API  
+    - **DataFrame API**: Cung cấp API mạnh mẽ để thao tác với dữ liệu có cấu trúc.  
+    - **Catalyst Optimizer**: Hệ thống tối ưu hóa truy vấn giúp cải thiện hiệu suất.  
+    - **Tích hợp với hệ thống lưu trữ**: Hỗ trợ HDFS, Hive, Parquet, JSON, JDBC, v.v.  
+
+- **Spark Streaming**: Xử lý dữ liệu thời gian thực với mô hình micro-batch  
+    - **DStream (Discretized Stream)**: Định dạng dữ liệu dòng thời gian thực trong Spark.  
+    - **Window Operations**: Thực hiện các phép toán trên cửa sổ thời gian.  
+    - **Tích hợp với Kafka, Flume, Kinesis**: Xử lý dữ liệu từ nhiều nguồn streaming phổ biến.  
+
+- **Spark ML**: Thư viện Machine Learning hỗ trợ các thuật toán học máy  
+    - **Thuật toán học máy**: Hỗ trợ các mô hình phân cụm, phân loại, hồi quy.  
+    - **Pipeline API**: Xây dựng quy trình Machine Learning tự động.  
+    - **MLlib**: Thư viện cũ trước đây của Spark ML.  
+
+- **GraphX**: Xử lý dữ liệu đồ thị và thuật toán đồ thị  
+    - **API Graph Processing**: Hỗ trợ thao tác trên dữ liệu dạng đồ thị.  
+    - **Thuật toán đồ thị**: Hỗ trợ PageRank, Connected Components, Shortest Path, v.v.  
+
+## 4.3 Apache Kafka  
+- **Kafka Cluster**: Hệ thống xử lý và truyền dữ liệu phân tán  
+    - **Broker**: Máy chủ Kafka chịu trách nhiệm lưu trữ dữ liệu và xử lý yêu cầu từ producer và consumer.  
+    - **Topic**: Kênh dữ liệu logic nơi producer gửi dữ liệu và consumer đọc dữ liệu.  
+    - **Partition**: Chia nhỏ dữ liệu trong topic để tăng khả năng mở rộng và xử lý song song.  
+
+- **Producer & Consumer**: Gửi và nhận dữ liệu trong Kafka  
+    - **Producer**: Gửi dữ liệu vào các topic trong Kafka theo mô hình publish-subscribe.  
+    - **Consumer**: Nhận dữ liệu từ Kafka để xử lý, có thể thuộc một Consumer Group để đọc dữ liệu song song.  
+    - **Consumer Group**: Nhóm các consumer để chia sẻ tải và xử lý dữ liệu từ các partition.  
+
+- **Kafka Cluster Management**: Quản lý và điều phối hệ thống  
+    - **Zookeeper**: Quản lý metadata của Kafka, theo dõi trạng thái các broker, topic và consumer offset.  
+    - **Leader & Follower Partition**: Cơ chế sao chép dữ liệu giữa các broker để đảm bảo tính sẵn sàng và khôi phục khi lỗi.  
+    - **Replication Factor**: Xác định số lượng bản sao của mỗi partition để bảo vệ dữ liệu khỏi mất mát.  
 
