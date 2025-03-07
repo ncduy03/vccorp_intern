@@ -99,8 +99,16 @@ public class Person {
 }
 ```
 ## 1.3. SQL
+- Tối ưu Query
+  - Dùng index
+  - Hạn chế sử dụng % (LIKE)
+  - Hạn chế sử dụng full outer join
+  - Hạn chế sử dụng SELECT *
+  - Hạn chế sử dụng DISTINCT
 
 ## 1.4. Linux
+
+
 # **2. Phân biệt OLTP vs OLAP, hiểu rõ ETL/ELT**
 
 | Tiêu chí              | OLTP (Xử lý giao dịch)          | OLAP (Phân tích dữ liệu)       |
@@ -192,7 +200,7 @@ public class Person {
     - **Leader & Follower Partition**: Cơ chế sao chép dữ liệu giữa các broker để đảm bảo tính sẵn sàng và khôi phục khi lỗi.  
     - **Replication Factor**: Xác định số lượng bản sao của mỗi partition để bảo vệ dữ liệu khỏi mất mát.  
 
-# **5. Kappa Architecture vs Lambda Architecture
+# **5. Kappa Architecture vs Lambda Architecture**
 ## 5.1. Kappa Architecture
 - **Streaming Layer (Lớp xử lý dòng dữ liệu)**
     - Xử lý dữ liệu ngay khi nó xuất hiện.
