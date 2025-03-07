@@ -192,3 +192,24 @@ public class Person {
     - **Leader & Follower Partition**: Cơ chế sao chép dữ liệu giữa các broker để đảm bảo tính sẵn sàng và khôi phục khi lỗi.  
     - **Replication Factor**: Xác định số lượng bản sao của mỗi partition để bảo vệ dữ liệu khỏi mất mát.  
 
+# **5. Kappa Architecture vs Lambda Architecture
+## 5.1. Kappa Architecture
+- **Streaming Layer (Lớp xử lý dòng dữ liệu)**
+    - Xử lý dữ liệu ngay khi nó xuất hiện.
+    - Dữ liệu cũ có thể được tái xử lý bằng cách chạy lại pipeline streaming.
+
+- **Serving Layer (Lớp cung cấp dữ liệu)**
+    - Lưu trữ và cung cấp dữ liệu đã xử lý.
+
+## 5.2. Lambda Architecture
+- **Batch Layer (Lớp xử lý theo lô)**
+    - Xử lý dữ liệu theo lô với độ trễ cao nhưng đảm bảo tính chính xác.
+    - Lưu trữ dữ liệu thô để có thể tái xử lý khi cần thiết.
+
+- **Speed Layer (Lớp xử lý nhanh - Real-time Layer)**
+    - Xử lý dữ liệu ngay khi nó đến để cung cấp kết quả nhanh chóng.
+    - Dữ liệu từ lớp này có thể không hoàn toàn chính xác (do chưa tổng hợp đầy đủ).
+
+- **Serving Layer (Lớp cung cấp dữ liệu)**
+    - Tổng hợp dữ liệu từ cả Batch Layer và Speed Layer để cung cấp kết quả đầu ra.
+    - Khi dữ liệu batch hoàn tất, nó sẽ thay thế dữ liệu từ speed layer để đảm bảo độ chính xác.
