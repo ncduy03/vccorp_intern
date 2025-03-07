@@ -116,7 +116,7 @@ public class Person {
 | **Ứng dụng thực tế** | Ngân hàng, thương mại điện tử, POS | Báo cáo doanh thu, phân tích hành vi khách hàng |
 
 
-# 3. Tìm hiểu các khái niệm CAP, BASE, ACID
+# **3. Tìm hiểu các khái niệm CAP, BASE, ACID**
 ## 3.1. CAP theorem
 - **Consistency (Tính nhất quán)**: Mọi node trong hệ thống phải có cùng một dữ liệu tại cùng một thời điểm.
 - **Availability (Tính sẵn sàng)**: Hệ thống luôn phản hồi yêu cầu, ngay cả khi một số node bị lỗi.
@@ -133,5 +133,24 @@ public class Person {
 - **Basically Available (Tính sẵn sàng cơ bản)**: Hệ thống luôn phản hồi, ngay cả khi có lỗi hoặc dữ liệu chưa được cập nhật đầy đủ.
 - **Soft-state (Trạng thái mềm dẻo, không nhất quán ngay lập tức)**: Dữ liệu có thể thay đổi mà không cần sự can thiệp ngay lập tức.
 - **Eventually Consistent (Nhất quán sau một khoảng thời gian nhất định)**: Dữ liệu không cần chính xác ngay lập tức, nhưng sẽ đồng bộ theo thời gian.
+
+# **4. Nghiên cứu các nền tảng Big Data**
+## 4.1 Hadoop
+- **Hadoop Distributed File System (HDFS)**: Phân tán dữ liệu  
+    - **NameNode**: Quản lý metadata của hệ thống tệp.  
+    - **DataNode**: Lưu trữ dữ liệu thực tế.  
+    - **Secondary NameNode**: Hỗ trợ NameNode bằng cách tạo snapshot metadata.  
+
+- **Yet Another Resource Negotiator (YARN)**: Quản lý tài nguyên  
+    - **ResourceManager**: Quản lý và phân phối tài nguyên trong cluster.  
+    - **NodeManager**: Giám sát tài nguyên trên từng node.  
+    - **ApplicationMaster**: Điều phối các container và xử lý yêu cầu ứng dụng.  
+
+- **MapReduce Processing Framework**: Xử lý dữ liệu song song  
+    - **Map Phase**: Chia dữ liệu thành các phần nhỏ và xử lý song song.  
+    - **Shuffle & Sort Phase**: Gom nhóm và sắp xếp dữ liệu trước khi đưa vào Reduce.  
+    - **Reduce Phase**: Tổng hợp và xử lý dữ liệu cuối cùng để tạo ra kết quả.  
+
+## 4.2. Spark
 
 
