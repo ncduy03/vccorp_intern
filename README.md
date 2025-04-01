@@ -59,7 +59,7 @@
     - **Shuffle & Sort Phase**: Gom nhóm và sắp xếp dữ liệu trước khi đưa vào Reduce.  
     - **Reduce Phase**: Tổng hợp và xử lý dữ liệu cuối cùng để tạo ra kết quả.  
 
-## 4.2. Apache Spark
+## 4.2. Spark
 - **Spark Core**: Thành phần cốt lõi của Spark, cung cấp các chức năng xử lý dữ liệu phân tán  
     - **RDD (Resilient Distributed Dataset)**: Cấu trúc dữ liệu chính giúp lưu trữ và xử lý dữ liệu phân tán.  
     - **Task Scheduling**: Lập lịch và phân phối công việc trên cluster.  
@@ -84,7 +84,7 @@
     - **API Graph Processing**: Hỗ trợ thao tác trên dữ liệu dạng đồ thị.  
     - **Thuật toán đồ thị**: Hỗ trợ PageRank, Connected Components, Shortest Path, v.v.  
 
-## 4.3 Apache Kafka  
+## 4.3 Kafka  
 - **Kafka Cluster**: Hệ thống xử lý và truyền dữ liệu phân tán  
     - **Broker**: Máy chủ Kafka chịu trách nhiệm lưu trữ dữ liệu và xử lý yêu cầu từ producer và consumer.  
     - **Topic**: Kênh dữ liệu logic nơi producer gửi dữ liệu và consumer đọc dữ liệu.  
