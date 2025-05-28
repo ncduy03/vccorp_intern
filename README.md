@@ -7,8 +7,6 @@
   - Hạn chế sử dụng SELECT *
   - Hạn chế sử dụng DISTINCT
 
-## Linux
-
 # **2. Phân biệt OLTP vs OLAP, hiểu rõ ETL/ELT**
 
 | Tiêu chí              | OLTP (Xử lý giao dịch)          | OLAP (Phân tích dữ liệu)       |
